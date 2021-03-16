@@ -31,14 +31,35 @@ public class Triangle
         side3 = x2 - y1;
     }
 
+    public void EquilateralTriangle()
+    {
+        equilateral = (side1 == side2 && side2 == side3);
+        Debug.Log("Yo soy un triangulo equilatero, mirame soy perfecto ;D");
+    }
+
+    public void IsoscelesTriangle()
+    {
+        isosceles = (side1 != side2 && side2 == side3);
+        Debug.Log("Yo soy un triangulo isosceles :D");
+    }
+
+    public void ScaleneTriangle()
+    {
+        scalene = (side1 != side2 && side2 != side3 && side1 != side3);
+        Debug.Log("Yo soy un triamgulo escalemno, admmira pojque soi umnico °U°");
+    }
+
     public void GetTriangle()
     {
+        switch (triangleType)
+        {
 
+        }
     }
 
     public void GetHeight()
     {
-        height = y1 - y2;
+        height = y1;
         Debug.Log("El lado 2 y 4 de tu rectangulo mide [0]" + height);
     }
 
