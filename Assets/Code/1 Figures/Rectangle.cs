@@ -2,41 +2,40 @@
 
 public class Rectangle
 {
-    //Atributes
-    private int widthSideLenght, longSideLeight, baseResult, perimeter, area;
-    private int x1, x2, x3, x4, y1, y2, y3, y4;
+    private int wedhtSide;
+    private float x1, x2, y1, y2;
+    private float height, theBase, perimeter, area;
 
 
-
-    public int WidthSide
+    void Update()
     {
-        get { return widthSideLenght;  }
-        set
-        {
-            if (value == 0)
-            {
-                widthSideLenght = value;
-            }
-            else
-            {
-                widthSideLenght = 0;
-            }
-        }
+        GetBase();
+        GetHeight();
+        GetPerimeter();
+        GetArea();
     }
 
-    public int LongSide
+    public void GetBase()
     {
-        get { return widthSideLenght; }
-        set
-        {
-            if (value == 0)
-            {
-                widthSideLenght = value;
-            }
-            else
-            {
-                widthSideLenght = 0;
-            }
-        }
+        theBase = x1 - x2;
+        Debug.Log("El lado 1 y 3 de tu rectangulo mide [0]" + theBase);
+    }
+
+    public void GetHeight()
+    {
+        height = y1 - y2;
+        Debug.Log("El lado 2 y 4 de tu rectangulo mide [0]" + height);
+    }
+
+    public void GetPerimeter()
+    {
+        perimeter = (theBase * 2) + (height * 2);
+        Debug.Log("El perimetro de tu rectangulo es [0]" + perimeter);
+    }
+
+    public void GetArea()
+    {
+        area = theBase * height;
+        Debug.Log("El area de tu rectangulo es [0]" + area);
     }
 }
