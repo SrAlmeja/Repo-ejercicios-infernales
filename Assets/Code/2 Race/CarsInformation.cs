@@ -2,17 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarsInformation : MonoBehaviour
+public class CarsInformation : Vehículo
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Car1
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+
+
+
 }
