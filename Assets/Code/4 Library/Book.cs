@@ -1,18 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Book : MonoBehaviour
+public class Book
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //atributes
+    private string title, autor, pageNumber;
 
-    // Update is called once per frame
-    void Update()
+    //Constructors
+    //Book information
+    public Book(string atitle, string aautor, string apageNumber)
     {
-        
+        title = atitle;
+        autor = aautor;
+        pageNumber = apageNumber;
     }
 }
