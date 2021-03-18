@@ -6,6 +6,6 @@ public class Time
 
     public Time(int ahour, int aminute, int asecond, int atimeUnit)
     {
-        time
+        
     }
 }

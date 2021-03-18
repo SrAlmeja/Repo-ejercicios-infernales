@@ -1,18 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine.UI;
 using UnityEngine;
 
 public class RealTimeClock : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Text RealClock;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        RealClock.text =
+            System.DateTime.Now.Hour.ToString("00") + ":" +
+            System.DateTime.Now.Minute.ToString("00") + ":" +
+            System.DateTime.Now.Second.ToString("00");
     }
 }
