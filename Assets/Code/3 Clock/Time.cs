@@ -1,17 +1,11 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Time : MonoBehaviour
+public class Time
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private int hour, minute, second, timeUnit;
 
-    // Update is called once per frame
-    void Update()
+    public Time(int ahour, int aminute, int asecond, int atimeUnit)
     {
-        
+        time
     }
 }
