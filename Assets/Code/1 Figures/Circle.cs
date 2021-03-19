@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 
-public class Circle
+public class Circle : MonoBehaviour
 {
     private int pi;
-    private float x1, x2;
+    public float x1, x2;
+    public float y1, y2;
+    private float a, b;
     private float radious, diameter, perimeter, area;
 
-    void Update()
+    void Start()
     {
         GetRadious();
         GetDiameter();
@@ -16,25 +18,27 @@ public class Circle
 
     public void GetRadious()
     {
-        radious = x1 - x2;
-        Debug.Log("El radio de tu circulo mide [0]" + radious);
+        a = x1 + y1;
+        b = x2 + y2;
+        radious = a + b;
+        Debug.Log("El radio de tu circulo mide" + radious);
     }
 
     public void GetDiameter()
     {
         diameter = radious *2;
-        Debug.Log("El diametro de tu circulo mide [0]" + diameter);
+        Debug.Log("El diametro de tu circulo mide" + diameter);
     }
 
     public void GetPerimeter()
     {
         perimeter = 3.1416f * diameter;
-        Debug.Log("El perimetro de tu rectangulo es [0]" + perimeter);
+        Debug.Log("El perimetro de tu rectangulo es" + perimeter);
     }
 
     public void GetArea()
     {
         area = 3.1416f * (radious * radious);
-        Debug.Log("El area de tu circulo es [0]" + area);
+        Debug.Log("El area de tu circulo es" + area);
     }
 }

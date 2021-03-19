@@ -1,14 +1,16 @@
 ﻿using UnityEngine;
 
-public class Triangle
+public class Triangle : MonoBehaviour
 {
     private int side1, side2, side3;
-    private int x1, x2, y1;
+    private int a, b, c;
+    public int x1, x2, x3;
+    public int y1, y2, y3;
     private float height, theBase, perimeter, area;
     private string triangleType;
     private bool equilateral, isosceles, scalene;
 
-    void Update()
+    void Start()
     {
         GetTriangle();
         GetHeight();
@@ -18,17 +20,20 @@ public class Triangle
 
     public void Side1()
     {
-        side1 = x1 - x2;
+        a = x1 + y1;
+        b = x2 + y2;
+        side1 = a + b;
     }
 
     public void Side2()
     {
-        side2 = x1 - y1;
+        c = x3 + y3;
+        side2 = b + c;
     }
 
     public void Side3()
     {
-        side3 = x2 - y1;
+        side3 = c + a;
     }
 
     public void EquilateralTriangle()
@@ -60,18 +65,18 @@ public class Triangle
     public void GetHeight()
     {
         height = y1;
-        Debug.Log("El lado 2 y 4 de tu rectangulo mide [0]" + height);
+        Debug.Log("El lado 2 y 4 de tu triangulo mide" + height);
     }
 
     public void GetPerimeter()
     {
         perimeter = (theBase * 2) + (height * 2);
-        Debug.Log("El perimetro de tu rectangulo es [0]" + perimeter);
+        Debug.Log("El perimetro de tu triangulo es" + perimeter);
     }
 
     public void GetArea()
     {
         area = theBase * height;
-        Debug.Log("El area de tu rectangulo es [0]" + area);
+        Debug.Log("El area de tu triangulo es" + area);
     }
 }
