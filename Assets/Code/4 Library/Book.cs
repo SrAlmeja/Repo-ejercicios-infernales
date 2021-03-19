@@ -3,30 +3,30 @@
 public class Book
 {
     //atributes
-    private string title, author, pageNumber;
+    private int title, author, pageNumber;
 
     //Constructors
     //Book information
-    public Book(string atitle, string aautor, string apageNumber)
+    public Book(int atitle, int aautor, int apageNumber)
     {
         title = atitle;
         author = aautor;
         pageNumber = apageNumber;
     }
 
-    public string Title
+    public int Title
     {
         get { return title; }
         set { title = value; }
     }
 
-    public string Author
+    public int Author
     {
         get { return author; }
         set { author = value; }
     }
 
-    public string PageNumber
+    public int PageNumber
     {
         get { return pageNumber; }
         set { pageNumber = value; }

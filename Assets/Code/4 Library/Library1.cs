@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Library : MonoBehaviour
+public class Library1 : MonoBehaviour
 {
-    public Galery theGalery = new Galery("", "", "", "", "", "", "");
+    public Galery theGalery = new Galery(0, 0, 0, 0, 0, 0, 0);
     private int libraryCapacity;
 
     [SerializeField] private GameObject DestroyButton;
@@ -55,27 +55,27 @@ public class Library : MonoBehaviour
     }
     void GetInfo(int index)
     {
-        Galery temporal = books[index];
-        books.RemoveAt(index);
+        Galery temporal = theList[index];
+        theList.RemoveAt(index);
     }
     public void RemoveBookOne()
     {
-        books.RemoveAt(1);
+        theList.RemoveAt(1);
     }
     public void RemoveBookTwo()
     {
-        books.RemoveAt(2);
+        theList.RemoveAt(2);
     }
     public void RemoveBookThree()
     {
-        books.RemoveAt(3);
+        theList.RemoveAt(3);
     }
     public void AddBook(Galery bookTest)
     {
-        if (books.Count < 3)
+        if (theList.Count < 3)
         {
             Print(bookTest);
-            books.Add(bookTest);
+            theList.Add(bookTest);
         }
         else
         {
@@ -243,7 +243,7 @@ public class Library : MonoBehaviour
         }
         if (bookOne.PublishedYear > 0)
         {
-            Debug.Log("Año de publicación: " + booknew.ReleaseYear);
+            Debug.Log("Año de publicación: " + bookOne.PublishedYear);
         }
         switch (bookOne.Status)
         {
@@ -259,7 +259,7 @@ public class Library : MonoBehaviour
                 }
         }
 
-        switch (bookOne.CoverColor)
+        switch (bookOne.Color)
         {
             case 1:
                 {
