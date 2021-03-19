@@ -30,7 +30,7 @@ public class TheTime : MonoBehaviour
 
         secondsTime = inicialTime;
 
-        GetTime(showmeTime);
+        //GetTime(showmeTime);
 
         
     }
@@ -41,12 +41,14 @@ public class TheTime : MonoBehaviour
 
         secondsTime += realFrameTime;
 
-        GetTime(showmeTime);
+        //GetTime(showmeTime);
 
     }
 
     public void GetTime(float showmeTime)
     {
+
+
         if (showmeTime < 0) showmeTime = 0;
 
         hour = (int)minutesTime / 3600;

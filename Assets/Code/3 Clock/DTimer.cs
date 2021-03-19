@@ -8,14 +8,8 @@ public class DTimer
     private int hours;
     private int minutes;
     private int seconds;
-
-    public DTimer(int ahours, int aminutes, int aseconds)
-    {
-        hours = ahours;
-        minutes = aminutes;
-        seconds = aseconds;
-    }
     
+
     //getTime & getTime
     public int Hours
     {
@@ -52,13 +46,6 @@ void Start()
 
     }
 
-    public void GetTime(float secondsTime)
-    {
-        if (secondsTime < 0) secondsTime = 0;
 
-        hours = (int)secondsTime / 3600;
-        minutes = (int)secondsTime / 60;
-        seconds = (int)secondsTime % 60;
-    }
 }
 
