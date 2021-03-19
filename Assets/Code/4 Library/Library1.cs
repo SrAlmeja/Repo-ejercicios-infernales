@@ -79,7 +79,7 @@ public class Library1 : MonoBehaviour
         }
         else
         {
-            CreateButton.SetActive(true);
+            DestroyButton.SetActive(true);
             Debug.Log("Libreria llena, proceder a la suicidación si no se libera espacio.");
         }
     }
