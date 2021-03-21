@@ -150,12 +150,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d68c4067c2cb070428040e92f0a9f269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x1: 3
-  x2: 3
-  x3: 3
-  y1: 3
-  y2: 3
-  y3: 3
+  x1: 0
+  x2: -5
+  x3: 5
+  y1: 0
+  y2: 5
+  y3: 5
 --- !u!4 &258144861
 Transform:
   m_ObjectHideFlags: 0
@@ -246,12 +246,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 938dd07a6afc14848a08fef782b28a2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x1: 1
-  x2: 3
-  x3: 1
-  y1: 1
-  y2: 1
-  y3: 3
+  x1: 0
+  x2: -5
+  x3: 5
+  y1: 0
+  y2: 5
+  y3: 5
 --- !u!4 &1817359461
 Transform:
   m_ObjectHideFlags: 0

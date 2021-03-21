@@ -33,7 +33,7 @@ public class Circle : MonoBehaviour
     public void GetPerimeter()
     {
         perimeter = 3.1416f * diameter;
-        Debug.Log("El perimetro de tu rectangulo es" + perimeter);
+        Debug.Log("El perimetro de tu circulo es" + perimeter);
     }
 
     public void GetArea()
