@@ -2,7 +2,8 @@
 
 public class Vehículo
 {
-    private int weight, hight, surface;
+    private float weight, height;
+    private int surface;
     private string color;
 
     public Vehículo()
@@ -10,29 +11,35 @@ public class Vehículo
 
     }
 
-    public Vehículo(int aweight)
+    public Vehículo(float aweight)
     {
         weight = aweight;
     }
 
-    public Vehículo(string acolor, int aweight, int ahight, int asurface)
+
+    public Vehículo(int asurface)
     {
-        color = acolor;
-        weight = aweight;
-        hight = ahight;
         surface = asurface;
     }
 
-    public int Weight
+    public Vehículo(string acolor, float aweight, float aheight, int asurface)
+    {
+        color = acolor;
+        weight = aweight;
+        height = aheight;
+        surface = asurface;
+    }
+
+    public float Weight
     {
         get { return weight; }
         set { weight = value; }
     }
 
-    public int Hight
+    public float Height
     {
-        get { return hight; }
-        set { hight = value; }
+        get { return height; }
+        set { height = value; }
     }
 
     public int Surface

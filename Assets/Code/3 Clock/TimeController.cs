@@ -5,42 +5,50 @@ using UnityEngine.UI;
 
 public class TimeController : MonoBehaviour
 {
-    public Text clock;
-    private float timeInSeconds = 0f;
-    private int inicialTime;
-    private float timeSpeed; 
-    DTimer hour = new DTimer();
-    DTimer minute = new DTimer();
-    DTimer second = new DTimer();
+    TheTime timeController = new TheTime(0, 0, 0);
 
-    // Start is called before the first frame update
-    void Start()
+    private const float realSecondsDay = 86400f;
+    private float day;
+    public float newHour, newMinute, newSecond;
+
+    public int changeTime;
+    public float scaleTime = 1;
+
+    public Text textTime;
+
+    private void Awake()
     {
-        clock = GetComponent<Text>();
-        timeSpeed = 1;
-        timeInSeconds = inicialTime;
+        if (textTime == null) textTime = GetComponent<Text>();
     }
-
-    // Update is called once per frame
     void Update()
     {
-        TheClock(timeInSeconds);
+        CountTime();
     }
-
-    public void TheClock(float timeInSeconds)
+    public void CountTime()
     {
-        int hour = 0;
-        int minute = 0;
-        int second = 0;
+        day += Time.deltaTime / realSecondsDay;
 
-        if (timeInSeconds < 0) timeInSeconds = 0;
+        float dayNormalized = day % 1f;
 
-        hour = (int)timeInSeconds / 3600;
-        minute = (int)timeInSeconds / 60;
-        second = (int)timeInSeconds % 60;
-        clock.text =
-        hour.ToString("00") + ":" +
-        minute.ToString("00") + ":" +
-        second.ToString("00");
+        float hoursInDay = 24f;
+
+        timeController.GetHour = Mathf.Floor(dayNormalized * hoursInDay);
+
+        float minutesInHour = 60f;
+        timeController.GetMinute = Mathf.Floor(((dayNormalized * hoursInDay) % 1f) * minutesInHour);
+
+        float secondsInMinute = 60f;
+        timeController.GetSecond = Mathf.Floor(((((dayNormalized * hoursInDay) % 1f) * minutesInHour) % 1f) * secondsInMinute);
+
+        textTime.text = timeController.GetHour + ":" + timeController.GetMinute + " : " + timeController.GetSecond;
+    }
+    public void ChangeTime()
+    {
+        timeController.GetSecond = newSecond;
+        timeController.GetMinute = newMinute;
+        timeController.GetHour = newHour;
+
+        Debug.Log(timeController.GetHour + ":" + timeController.GetMinute + " : " + timeController.GetSecond);
+        textTime.text = timeController.GetHour + ":" + timeController.GetMinute + " : " + timeController.GetSecond;
     }
 }

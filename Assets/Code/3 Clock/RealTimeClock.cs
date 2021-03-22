@@ -5,7 +5,7 @@ public class RealTimeClock : MonoBehaviour
 {
     public Text RealClock;
 
-    void Update()
+    void FixedUpdate()
     {
         RealClock.text =
             System.DateTime.Now.Hour.ToString("00") + ":" +

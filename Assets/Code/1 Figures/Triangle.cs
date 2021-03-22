@@ -2,11 +2,11 @@
 
 public class Triangle : MonoBehaviour
 {
-    private int side1, side2, side3;
-    private int a, b, c;
-    public int x1, x2, x3;
-    public int y1, y2, y3;
-    private float height, theBase, perimeter, area;
+    private float side1, side2, side3;
+    private float AB, AC, BC, a;
+    public float x1, x2, x3;
+    public float y1, y2, y3;
+    private float height, perimeter, area;
     private string triangleType;
     private bool equilateral, isosceles, scalene;
 
@@ -20,20 +20,20 @@ public class Triangle : MonoBehaviour
 
     public void Side1()
     {
-        a = x1 + y1;
-        b = x2 + y2;
-        side1 = a + b;
+        AB = Mathf.Sqrt(((y2 - y1) * (y2 - y1)) + ((x2 - x1) * (x2 - x1)));
+        side1 = AB;
     }
 
     public void Side2()
     {
-        c = x3 + y3;
-        side2 = b + c;
+        AC = Mathf.Sqrt(((y3 - y1) * (y3 - y1)) + ((x3 - x1) * (x3 - x1)));
+        side2 = AC;
     }
 
     public void Side3()
     {
-        side3 = c + a;
+        BC = Mathf.Sqrt(((y3 - y2) * (y3 - y2)) + ((x3 - x2) * (x3 - x2)));
+        side3 = BC;
     }
 
     public void EquilateralTriangle()
@@ -64,19 +64,19 @@ public class Triangle : MonoBehaviour
 
     public void GetHeight()
     {
-        height = y1;
-        Debug.Log("El lado 2 y 4 de tu triangulo mide" + height);
+        a = AB - AC;
+        height = Mathf.Sqrt(((y3 - a) * (y3 - a)) * ((x3 - a) * (x3 - a)));
     }
 
     public void GetPerimeter()
     {
-        perimeter = (theBase * 2) + (height * 2);
+        perimeter = (side1 + side2 + side3);
         Debug.Log("El perimetro de tu triangulo es" + perimeter);
     }
 
     public void GetArea()
     {
-        area = theBase * height;
+        area = (side1 * height) / 2;
         Debug.Log("El area de tu triangulo es" + area);
     }
 }

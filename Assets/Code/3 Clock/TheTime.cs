@@ -1,61 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
 using UnityEngine;
 
-public class TheTime : MonoBehaviour
+public class TheTime
 {
-    private int inicialTime;
-    private int hour, minute, second;
-    public Text clock;
-    private float timeSpeed = 1;
-    private float hoursTime = 0f;
-    private float minutesTime = 0f;
-    private float secondsTime = 0f;
-    private float scaleInicialTime;
-    private float realFrameTime = 0f;
+    private float hour;
+    private float minute;
+    private float second;
 
-    public TheTime(int ahour, int aminute, int asecond, int atimeUnit)
+    public TheTime(float ahour, float aminute, float asecond)
     {
         hour = ahour;
         minute = aminute;
         second = asecond;
     }
 
-    void Star()
+    public float GetHour
     {
-        timeSpeed = scaleInicialTime;
-
-        clock = GetComponent<Text>();
-
-        secondsTime = inicialTime;
-
-        //GetTime(showmeTime);
-
-        
+        get { return hour; }
+        set { hour = value; }
     }
-
-    private void Update()
+    public float GetMinute
     {
-        realFrameTime = Time.deltaTime * timeSpeed;
-
-        secondsTime += realFrameTime;
-
-        //GetTime(showmeTime);
-
+        get { return minute; }
+        set { minute = value; }
     }
-
-    public void GetTime(float showmeTime)
+    public float GetSecond
     {
-
-
-        if (showmeTime < 0) showmeTime = 0;
-
-        hour = (int)minutesTime / 3600;
-        minute = (int)secondsTime / 60;
-        second = (int)secondsTime % 60;
-
-        clock.text = hour + ":" + minute + ":" + second;
+        get { return second; }
+        set { second = value; }
     }
-
 }

@@ -2,8 +2,7 @@
 
 public class Rectangle : MonoBehaviour
 {
-    private int wedhtSide;
-    private float a, b, c;
+    private float ab, ac;
     public float x1, x2, x3;
     public float y1, y2, y3;
     private float height, theBase, perimeter, area;
@@ -17,20 +16,21 @@ public class Rectangle : MonoBehaviour
         GetArea();
     }
 
+    public void GetSide()
+    {
+        ab = Mathf.Sqrt(((y2 - y1) * (y2 - y1)) + ((x2 - x1) * (x2 - x1)));
+        ac = Mathf.Sqrt(((y3 - y1) * (y3 - y1)) + ((x3 - x1) * (x3 - x1)));
+    }
 
     public void GetBase()
     {
-        a = x1 + y1;
-        b = x2 + y2;
-        theBase = a + b;
+        theBase = ab;
         Debug.Log("El lado 1 y 3 de tu rectangulo mide" + theBase);
     }
 
     public void GetHeight()
     {
-        a = x1 + y1;
-        c = x3 + y3;
-        height = a + c;
+        height = ac;
         Debug.Log("El lado 2 y 4 de tu rectangulo mide" + height);
     }
 

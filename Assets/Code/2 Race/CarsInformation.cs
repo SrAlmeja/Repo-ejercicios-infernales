@@ -20,7 +20,7 @@ public class CarsInformation : Vehículo
         carName = acarName;
     }
 
-    public int DoornNumber { get { return doorNumber; } set { doorNumber = value; } }
+    public int DoorNumber { get { return doorNumber; } set { doorNumber = value; } }
 
     public int PersonNumber { get { return personNumber; } set { personNumber = value; } }
 
@@ -34,4 +34,10 @@ public class CarsInformation : Vehículo
 
     public string CarName { get { return carName; } set { carName = value; } }
 
+    public string Information (CarsInformation showCar)
+    {
+        string tempo = showCar.CarName.ToString() + " " + showCar.DoorNumber.ToString() + " " + showCar.PersonNumber.ToString() + " " + showCar.Gas.ToString() + " " + showCar.MaximumSpeed.ToString();
+        return tempo;
+
+    }
 }
