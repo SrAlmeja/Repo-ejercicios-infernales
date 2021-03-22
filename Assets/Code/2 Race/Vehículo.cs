@@ -2,9 +2,8 @@
 
 public class Vehículo
 {
-    private int weight, hight, surface, doorNumber, passengerNumber, cylinder, gas, maximumSpeed, numberOfSpeeds;
-    private string color, carName;
-    public float carSelector1, carSelector2;
+    private int weight, hight, surface;
+    private string color;
 
     public Vehículo()
     {
@@ -16,24 +15,35 @@ public class Vehículo
         weight = aweight;
     }
 
-    public Vehículo(string acolor, int aweight, int ahight, int asurface, int adoorNumber, int apassengerNumber, int acylinder, int agas, int amaximumSpeed, int anumberOfSpeed,
-    string acarName)
+    public Vehículo(string acolor, int aweight, int ahight, int asurface)
     {
         color = acolor;
         weight = aweight;
         hight = ahight;
         surface = asurface;
-        doorNumber = adoorNumber;
-        passengerNumber = apassengerNumber;
-        cylinder = acylinder;
-        gas = agas;
-        maximumSpeed = amaximumSpeed;
-        numberOfSpeeds = anumberOfSpeed;
     }
 
-    // Update is called once per frame
-    void Update()
+    public int Weight
     {
-        
+        get { return weight; }
+        set { weight = value; }
+    }
+
+    public int Hight
+    {
+        get { return hight; }
+        set { hight = value; }
+    }
+
+    public int Surface
+    {
+        get { return surface; }
+        set { surface = value; }
+    }
+
+    public string Color
+    {
+        get { return color; }
+        set { color = value; }
     }
 }
