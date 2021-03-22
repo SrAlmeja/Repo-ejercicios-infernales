@@ -228,12 +228,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0a86cce671d274b8295632f8810396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newHour: 0
-  newMinute: 0
-  newSecond: 0
-  changeTime: 0
-  scaleTime: 1
-  textTime: {fileID: 1781039}
+  theHour: 9
+  theMinute: 10
+  theSecond: 50
+  changeTime: 1
+  TimeScale: 1
+  InfernalClock: {fileID: 1781039}
 --- !u!4 &168805532
 Transform:
   m_ObjectHideFlags: 0
