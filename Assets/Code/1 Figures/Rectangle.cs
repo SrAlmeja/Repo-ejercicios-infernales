@@ -2,9 +2,9 @@
 
 public class Rectangle : MonoBehaviour
 {
-    private float ab, ac;
-    public float x1, x2, x3;
-    public float y1, y2, y3;
+    private float AB;
+    public float x1, x2;
+    public float y1, y2;
     private float height, theBase, perimeter, area;
 
 
@@ -16,33 +16,27 @@ public class Rectangle : MonoBehaviour
         GetArea();
     }
 
-    public void GetSide()
-    {
-        ab = Mathf.Sqrt(((y2 - y1) * (y2 - y1)) + ((x2 - x1) * (x2 - x1)));
-        ac = Mathf.Sqrt(((y3 - y1) * (y3 - y1)) + ((x3 - x1) * (x3 - x1)));
-    }
-
     public void GetBase()
     {
-        theBase = ab;
-        Debug.Log("El lado 1 y 3 de tu rectangulo mide" + theBase);
+        theBase = x2 - x1;
+        Debug.Log("la base de tu rectangulo (lado 1 y 3) miden: " + theBase);
     }
 
     public void GetHeight()
     {
-        height = ac;
-        Debug.Log("El lado 2 y 4 de tu rectangulo mide" + height);
+        height = y2 - y1;
+        Debug.Log("La altura de tu rectangulo (lado 2 y 4) mide: " + height);
     }
 
     public void GetPerimeter()
     {
         perimeter = (theBase * 2) + (height * 2);
-        Debug.Log("El perimetro de tu rectangulo es" + perimeter);
+        Debug.Log("El perimetro de tu rectangulo es de: " + perimeter);
     }
 
     public void GetArea()
     {
         area = theBase * height;
-        Debug.Log("El area de tu rectangulo es" + area);
+        Debug.Log("El area de tu rectangulo es de: " + area);
     }
 }

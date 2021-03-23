@@ -20,52 +20,57 @@ public class Triangle : MonoBehaviour
 
     public void Side1()
     {
-        AB = Mathf.Sqrt(((y2 - y1) * (y2 - y1)) + ((x2 - x1) * (x2 - x1)));
+        AB = x2 - x1;
         side1 = AB;
     }
 
     public void Side2()
     {
-        AC = Mathf.Sqrt(((y3 - y1) * (y3 - y1)) + ((x3 - x1) * (x3 - x1)));
+        AC = x3 - x1;
         side2 = AC;
     }
 
     public void Side3()
     {
-        BC = Mathf.Sqrt(((y3 - y2) * (y3 - y2)) + ((x3 - x2) * (x3 - x2)));
+        BC = x3 - x2;
         side3 = BC;
     }
 
-    public void EquilateralTriangle()
-    {
-        equilateral = (side1 == side2 && side2 == side3);
-        Debug.Log("Yo soy un triangulo equilatero, mirame soy perfecto ;D");
-    }
-
-    public void IsoscelesTriangle()
-    {
-        isosceles = (side1 != side2 && side2 == side3);
-        Debug.Log("Yo soy un triangulo isosceles :D");
-    }
-
-    public void ScaleneTriangle()
-    {
-        scalene = (side1 != side2 && side2 != side3 && side1 != side3);
-        Debug.Log("Yo soy un triamgulo escalemno, admmira pojque soi umnico °U°");
-    }
 
     public void GetTriangle()
     {
-        switch (triangleType)
-        {
+        equilateral = (side1 == side2 && side2 == side3);
 
-        }
+        isosceles = (side1 != side2 && side2 == side3);
+        Debug.Log("Yo soy un triangulo isosceles :D");
+
+        scalene = (side1 != side2 && side2 != side3 && side1 != side3);
+        Debug.Log("Yo soy un triamgulo escalemno, admmira pojque soi umnico °U°");
+        
+        switch ( triangleType)
+        {
+            case 1:
+                {
+                    Debug.Log("Yo soy un triangulo equilatero, mirame soy perfecto ;D");
+                    break;
+                }
+            case 2:
+                {
+                    Debug.Log("Yo soy un triangulo isosceles :D");
+                    break;
+                }
+            case 3:
+                {
+                    Debug.Log("Yo soy un triamgulo escalemno, admmira pojque soi umnico °U°");
+                    break;
+                }
+        }  
     }
 
     public void GetHeight()
     {
-        a = AB - AC;
-        height = Mathf.Sqrt(((y3 - a) * (y3 - a)) * ((x3 - a) * (x3 - a)));
+        a = side1 - side2;
+        height = y3 - a;
     }
 
     public void GetPerimeter()

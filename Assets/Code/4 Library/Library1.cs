@@ -60,15 +60,15 @@ public class Library1 : MonoBehaviour
     }
     public void RemoveBookOne()
     {
-        theList.RemoveAt(1);
+        theList.RemoveAt(0);
     }
     public void RemoveBookTwo()
     {
-        theList.RemoveAt(2);
+        theList.RemoveAt(1);
     }
     public void RemoveBookThree()
     {
-        theList.RemoveAt(3);
+        theList.RemoveAt(2);
     }
     public void AddBook(Galery bookTest)
     {
