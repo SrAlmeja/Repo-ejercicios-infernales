@@ -16,14 +16,20 @@ public class TimeController : MonoBehaviour
 
     public Text InfernalClock;
 
+    public float changeHour;
+    public float changeMinute;
+    public float changeSecond;
+
     private void Awake()
     {
         if (InfernalClock == null) InfernalClock = GetComponent<Text>();
     }
+
     void FixedUpdate()
     {
         GiveMeTime();
     }
+
     public void GiveMeTime()
     {
         day += Time.deltaTime / secondsOnADay;
@@ -38,15 +44,147 @@ public class TimeController : MonoBehaviour
         float secondsInMinute = 60;
         timeController.GetSecond = Mathf.Floor(((((normalizedDay * hoursInADay) % 1) * minutesInHour) % 1) * secondsInMinute);
 
-        InfernalClock.text = timeController.GetHour + ":" + timeController.GetMinute + " : " + timeController.GetSecond;
+        if (timeController.GetHour >= 10)
+        {
+            InfernalClock.text = timeController.GetHour + ":" + timeController.GetMinute + ":" + timeController.GetSecond;
+
+            if (timeController.GetMinute >= 10)
+            {
+                InfernalClock.text = timeController.GetHour + ":" + timeController.GetMinute + ":" + timeController.GetSecond;
+
+                if (timeController.GetSecond >= 10)
+                {
+                    InfernalClock.text = timeController.GetHour + ":" + timeController.GetMinute + ":" + timeController.GetSecond;
+                }
+                if (timeController.GetSecond <= 9)
+                {
+                    InfernalClock.text = timeController.GetHour + ":" + timeController.GetMinute + ":" + "0" + timeController.GetSecond;
+                }
+            }
+            if (timeController.GetMinute <= 9)
+            {
+                InfernalClock.text = timeController.GetHour + ":" + "0" + timeController.GetMinute + ":" + timeController.GetSecond;
+
+                if (timeController.GetSecond >= 10)
+                {
+                    InfernalClock.text = timeController.GetHour + ":" + "0" + timeController.GetMinute + ":" + timeController.GetSecond;
+                }
+                if (timeController.GetSecond <= 9)
+                {
+                    InfernalClock.text = timeController.GetHour + ":" + "0" + timeController.GetMinute + ":" + "0" + timeController.GetSecond;
+                }
+            }
+        }
+        if (timeController.GetHour <= 9)
+        {
+            InfernalClock.text = "0" + timeController.GetHour + ":" + timeController.GetMinute + ":" + timeController.GetSecond;
+
+            if (timeController.GetMinute >= 10)
+            {
+                InfernalClock.text = "0" + timeController.GetHour + ":" + timeController.GetMinute + ":" + timeController.GetSecond;
+
+                if (timeController.GetSecond >= 10)
+                {
+                    InfernalClock.text = "0" + timeController.GetHour + ":" + "0" + timeController.GetMinute + ":" + timeController.GetSecond;
+                }
+                if (timeController.GetSecond <= 9)
+                {
+                    InfernalClock.text = "0" + timeController.GetHour + ":" + timeController.GetMinute + ":" + "0" + timeController.GetSecond;
+                }
+            }
+            if (timeController.GetMinute <= 9)
+            {
+                InfernalClock.text = "0" + timeController.GetHour + ":" + "0" + timeController.GetMinute + ":" + timeController.GetSecond;
+
+                if (timeController.GetSecond >= 10)
+                {
+                    InfernalClock.text = "0" + timeController.GetHour + ":" + "0" + timeController.GetMinute + ":" + timeController.GetSecond;
+                }
+                if (timeController.GetSecond <= 9)
+                {
+                    InfernalClock.text = "0" + timeController.GetHour + ":" + "0" + timeController.GetMinute + ":" + "0" + timeController.GetSecond;
+                }
+            }
+        }
     }
 
-    public void ChangeTime()
-    {
-        timeController.GetSecond = theSecond;
-        timeController.GetMinute = theMinute;
-        timeController.GetHour = theHour;
-        Debug.Log(timeController.GetHour + ":" + timeController.GetMinute + " : " + timeController.GetSecond);
-        InfernalClock.text = timeController.GetHour + ":" + timeController.GetMinute + " : " + timeController.GetSecond;
+        public void ChangeTime()
+        {
+        day += Time.deltaTime / secondsOnADay;
+
+        float normalizedDay = day % 1;
+        float hoursInADay = 24;
+
+        changeHour = Mathf.Floor(normalizedDay * hoursInADay);
+
+        float minutesInHour = 60;
+        changeMinute = Mathf.Floor(((normalizedDay * hoursInADay) % 1) * minutesInHour);
+        float secondsInMinute = 60;
+        changeSecond = Mathf.Floor(((((normalizedDay * hoursInADay) % 1) * minutesInHour) % 1) * secondsInMinute);
+
+        if (changeHour >= 10)
+        {
+            InfernalClock.text = timeController.GetHour + ":" + timeController.GetMinute + ":" + timeController.GetSecond;
+
+            if (timeController.GetMinute >= 10)
+            {
+                InfernalClock.text = timeController.GetHour + ":" + timeController.GetMinute + ":" + timeController.GetSecond;
+
+                if (timeController.GetSecond >= 10)
+                {
+                    InfernalClock.text = timeController.GetHour + ":" + timeController.GetMinute + ":" + timeController.GetSecond;
+                }
+                if (timeController.GetSecond <= 9)
+                {
+                    InfernalClock.text = timeController.GetHour + ":" + timeController.GetMinute + ":" + "0" + timeController.GetSecond;
+                }
+            }
+            if (timeController.GetMinute <= 9)
+            {
+                InfernalClock.text = timeController.GetHour + ":" + "0" + timeController.GetMinute + ":" + timeController.GetSecond;
+
+                if (timeController.GetSecond >= 10)
+                {
+                    InfernalClock.text = timeController.GetHour + ":" + "0" + timeController.GetMinute + ":" + timeController.GetSecond;
+                }
+                if (timeController.GetSecond <= 9)
+                {
+                    InfernalClock.text = timeController.GetHour + ":" + "0" + timeController.GetMinute + ":" + "0" + timeController.GetSecond;
+                }
+            }
+        }
+        if (timeController.GetHour <= 9)
+        {
+            InfernalClock.text = "0" + timeController.GetHour + ":" + timeController.GetMinute + ":" + timeController.GetSecond;
+
+            if (timeController.GetMinute >= 10)
+            {
+                InfernalClock.text = "0" + timeController.GetHour + ":" + timeController.GetMinute + ":" + timeController.GetSecond;
+
+                if (timeController.GetSecond >= 10)
+                {
+                    InfernalClock.text = "0" + timeController.GetHour + ":" + "0" + timeController.GetMinute + ":" + timeController.GetSecond;
+                }
+                if (timeController.GetSecond <= 9)
+                {
+                    InfernalClock.text = "0" + timeController.GetHour + ":" + timeController.GetMinute + ":" + "0" + timeController.GetSecond;
+                }
+            }
+            if (timeController.GetMinute <= 9)
+            {
+                InfernalClock.text = "0" + timeController.GetHour + ":" + "0" + timeController.GetMinute + ":" + timeController.GetSecond;
+
+                if (timeController.GetSecond >= 10)
+                {
+                    InfernalClock.text = "0" + timeController.GetHour + ":" + "0" + timeController.GetMinute + ":" + timeController.GetSecond;
+                }
+                if (timeController.GetSecond <= 9)
+                {
+                    InfernalClock.text = "0" + timeController.GetHour + ":" + "0" + timeController.GetMinute + ":" + "0" + timeController.GetSecond;
+                }
+            }
+        }
     }
-}
+            
+    }
+    

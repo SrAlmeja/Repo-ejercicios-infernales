@@ -3,12 +3,14 @@
 public class Triangle : MonoBehaviour
 {
     private float side1, side2, side3;
-    private float AB, AC, BC, a;
-    public float x1, x2, x3;
-    public float y1, y2, y3;
+    private float AB, AC, BC;
+    public Vector3 a;
+    public Vector3 b;
+    public Vector3 c;
     private float height, perimeter, area;
     private string triangleType;
     private bool equilateral, isosceles, scalene;
+
 
     void Start()
     {
@@ -20,62 +22,52 @@ public class Triangle : MonoBehaviour
 
     public void Side1()
     {
-        AB = x2 - x1;
+        AB = (b.x - a.x) * (b.x - a.x);
         side1 = AB;
     }
 
     public void Side2()
     {
-        AC = x3 - x1;
+        AC = Mathf.Sqrt(Mathf.Pow((c.x - a.x),2) + Mathf.Pow((c.y - a.y),2));
         side2 = AC;
     }
 
     public void Side3()
     {
-        BC = x3 - x2;
+        BC = Mathf.Sqrt(Mathf.Pow((c.x - b.x), 2) + Mathf.Pow((c.y - b.y), 2));
         side3 = BC;
     }
 
 
     public void GetTriangle()
     {
-        equilateral = (side1 == side2 && side2 == side3);
-
-        isosceles = (side1 != side2 && side2 == side3);
-        Debug.Log("Yo soy un triangulo isosceles :D");
-
-        scalene = (side1 != side2 && side2 != side3 && side1 != side3);
-        Debug.Log("Yo soy un triamgulo escalemno, admmira pojque soi umnico °U°");
-        
-        switch ( triangleType)
+        if (side1 == side2 && side2 == side3)
         {
-            case 1:
-                {
-                    Debug.Log("Yo soy un triangulo equilatero, mirame soy perfecto ;D");
-                    break;
-                }
-            case 2:
-                {
-                    Debug.Log("Yo soy un triangulo isosceles :D");
-                    break;
-                }
-            case 3:
-                {
-                    Debug.Log("Yo soy un triamgulo escalemno, admmira pojque soi umnico °U°");
-                    break;
-                }
-        }  
+            triangleType = "Equilatero";
+            Debug.Log("Yo soy un triangulo equilatero, mirame soy perfecto ;D");
+        }
+
+        if (side1 != side2 && side2 == side3)
+        {
+            triangleType = "Isosceles";
+            Debug.Log("Yo soy un triangulo isosceles :D");
+        }
+
+        if (side1 != side2 && side2 != side3 && side1 != side3)
+        {
+            triangleType = "Escaleno";
+            Debug.Log("Yo soy un triamgulo escalemno, admmira pojque soi umnico °U°");
+        }
     }
 
     public void GetHeight()
     {
-        a = side1 - side2;
-        height = y3 - a;
+        height = a.y + c.y;
     }
 
     public void GetPerimeter()
     {
-        perimeter = (side1 + side2 + side3);
+        perimeter = (AB + AC + BC);
         Debug.Log("El perimetro de tu triangulo es" + perimeter);
     }
 

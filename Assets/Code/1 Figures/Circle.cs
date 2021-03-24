@@ -2,7 +2,6 @@
 
 public class Circle : MonoBehaviour
 {
-    private int pi;
     public float x1, x2;
     public float y1, y2;
     private float ab;
@@ -25,7 +24,7 @@ public class Circle : MonoBehaviour
 
     public void GetDiameter()
     {
-        diameter = radious *2;
+        diameter = radious * 2;
         Debug.Log("El diametro de tu circulo mide" + diameter);
     }
 
