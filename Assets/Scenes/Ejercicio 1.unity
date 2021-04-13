@@ -244,12 +244,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 938dd07a6afc14848a08fef782b28a2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x1: 0
-  x2: -5
-  x3: 5
-  y1: 0
-  y2: 5
-  y3: 5
+  a: {x: 0, y: 0, z: 0}
+  b: {x: 5, y: 0, z: 0}
+  c: {x: 3, y: 5, z: 0}
 --- !u!4 &1817359461
 Transform:
   m_ObjectHideFlags: 0

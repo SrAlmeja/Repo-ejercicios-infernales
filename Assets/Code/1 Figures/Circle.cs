@@ -39,4 +39,9 @@ public class Circle : MonoBehaviour
         area = 3.1416f * (radious * radious);
         Debug.Log("El area de tu circulo es" + area);
     }
+
+    public float Area { get { return area; } }
+
+    public float  Radius { set { radious = value; } }
+
 }
