@@ -10,16 +10,16 @@ public class CarTest1
     {
         //Arrange - Arreglos o preparativos
         Lakitu vocho = new Lakitu();
-        var speedCar1 = 140;
-        var speedCar2 = 175;
-        var expectedVictory = "no";
+        int indexvocho = 0;
+        int indexaveo = 1;
+        var expectedVictory = 1;
 
         // Act - La función o proceso a probar
 
-        vocho.theRice(speedCar1, speedCar2);
+        vocho.theRice(indexvocho, indexaveo);
 
         // Assert - Afirmación
-        Assert.That(vocho, Is.EqualTo(expectedVictory));
+        Assert.That(vocho.winner, Is.EqualTo(expectedVictory));
     }
 
     [Test]

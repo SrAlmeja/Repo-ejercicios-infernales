@@ -17,7 +17,7 @@ public class Lakitu : MonoBehaviour
     CarsInformation carEight = new CarsInformation(4, 5, 4, 64, 127, 6, "avalón");
     CarsInformation carNine = new CarsInformation(3, 4, 4, 57, 130, 5, "Fuego Turbo");
     CarsInformation carTen = new CarsInformation(2, 2, 4, 50, 130, 5, "Audi TT RS Roadster");
-    
+    public int winner = 0;
     private void Awake()
     {
         listOfCars.Add(carOne);
@@ -74,6 +74,7 @@ public class Lakitu : MonoBehaviour
         if (timeA > timeB)
         {
             Debug.Log("Lo lamento pero fuiste lento vehiculo 2");
+            winner = 1;
         }
         if (timeB < timeA)
         {
